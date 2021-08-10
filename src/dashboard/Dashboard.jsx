@@ -13,7 +13,7 @@ export default function Dashboard() {
     }
   }, [user]);
   if (redirect) {
-    return <Redirect to={redirect} />;
+    // return <Redirect to={redirect} />;
   }
   return (
     <div className="dashboard">
