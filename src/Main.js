@@ -1,5 +1,10 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 import Navbar from "./navbar/Navbar";
 import Login from "./login/Login";
@@ -19,7 +24,7 @@ const Main = () => {
             <Login />
           </Route>
           <Route path="/dashboard">
-            <Dashboard />
+            {user===null ? <Redirect to="/" /> : <Dashboard />}
           </Route>
         </Switch>
       </div>

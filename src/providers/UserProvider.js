@@ -6,15 +6,16 @@ export default (props) => {
 
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
-        if(user){
-            const { displayName, email } = user;
-            setuser({
-                displayName,
-                email,
-            });
-        }
+      if (user) {
+        const { displayName, email, photoURL } = user;
+        setuser({
+          displayName,
+          email,
+          photoURL,
+        });
+      }
     });
-}, []);
+  }, []);
   return (
     <UserContext.Provider value={user}>{props.children}</UserContext.Provider>
   );
