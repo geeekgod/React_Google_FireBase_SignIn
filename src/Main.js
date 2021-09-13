@@ -15,16 +15,19 @@ const Main = () => {
   const user = useContext(UserContext);
   console.log(user);
 
+  const userUid = localStorage.getItem("userUid");
+
   return (
     <Router>
       <Navbar />
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Login />
+            {userUid === null ? <Login /> : <Redirect to="/dashboard" />}
           </Route>
           <Route path="/dashboard">
-            {user===null ? <Redirect to="/" /> : <Dashboard />}
+            {userUid === null ? <Redirect to="/" /> : <Dashboard />}
+            {/* <Dashboard/> */}
           </Route>
         </Switch>
       </div>

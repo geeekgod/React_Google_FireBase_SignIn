@@ -31,6 +31,8 @@ export const logOut = () => {
     .signOut()
     .then(() => {
       console.log("logged out");
+      localStorage.clear();
+      console.log(localStorage.getItem("userUid"));
     })
     .catch((error) => {
       console.log(error.message);
