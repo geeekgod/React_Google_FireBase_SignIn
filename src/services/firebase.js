@@ -1,8 +1,6 @@
-import { useState,createContext } from "react";
 import dotenv from 'dotenv';
 import firebase from 'firebase/app';
 import "firebase/auth";
-// export const UserLoggedIn = createContext({ isTrue: null });
 
 dotenv.config()
 firebase.initializeApp({
